@@ -1,0 +1,58 @@
+// ==========================================================================
+// HERO STYLES
+// ==========================================================================
+
+.hero {
+  display: flex;
+  max-width: $container-max-width;
+  margin: 30px auto;
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: $tablet) {
+      flex-direction: column-reverse;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+
+  &__content,
+  &__image {
+    flex: 1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    max-width: 518px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    p {
+      max-width: 80%;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// ==========================================================================
+// VARIABLES
+// ==========================================================================
+
+// Colors
+$white: #ffffff;
+$grey-light: #EFEFEF;
+$black: #2f281e;
+$brown: #544837;
+$blue: #173a56;
+$blue-light: #567592;
+$blue-border: #bcd0e5;
+$orange: #ff9900;
+$orange-icon: #FAB005;
+$purple-icon: #7752BE;
+$red-icon: #F03E3D;
+$blue-icon: #4DADF7;
+
+
+// Typography
+$font-family: "Poppins", sans-serif;
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-xxl: 1.5rem; // 24px
+
+$font-weight-light: 400;
+$font-weight-normal: 500;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+
+// Breakpoints
+$mobile: 480px;
+$tablet: 768px;
+$tablet-large: 1024px;
+$desktop: 1400px;
+
+// Container
+$container-max-width: 1126px;
+
+// Transitions
+$transition: all 0.3s ease;
+$transition-fast: all 0.15s ease;

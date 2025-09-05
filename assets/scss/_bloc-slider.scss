@@ -1,0 +1,112 @@
+.bloc-slider {
+  margin: 30px auto 120px;
+
+  @media screen and (max-width: $tablet-large) {
+    margin-bottom: 60px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 55px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .slider-items {
+    width: 100%;
+    overflow: hidden;
+
+    .swiper-wrapper {
+      display: flex;
+    }
+
+    .swiper-slide {
+      flex-shrink: 0;
+      width: auto;
+      height: auto;
+    }
+
+    .swiper-pagination {
+      position: relative;
+      margin-top: 2rem;
+
+      .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        background: $grey-light;
+        opacity: 1;
+        margin: 0 6px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          background: $orange;
+        }
+
+        &-active {
+          background: $orange;
+        }
+      }
+    }
+  }
+
+  .slider-item {
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: auto;
+    width: 100%;    
+
+    &:hover img {
+      transform: scale(1.15);
+    }
+
+    &__image {
+      overflow: hidden;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 25px 54px 0 0;
+
+      .infos {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: $brown;
+      }
+
+      .title {
+        font-size: $font-size-xxl;
+        font-weight: $font-weight-bold;
+        line-height: 34px;
+        transition: color 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
+  }
+}

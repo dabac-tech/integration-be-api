@@ -1,0 +1,127 @@
+.bloc-text-image {
+  display: flex;
+  margin: 120px auto 0;
+
+  &.reverse {
+    .container {
+      flex-direction: row-reverse;
+
+      @media screen and (max-width: $tablet) {
+        flex-direction: column-reverse;
+        gap: 2rem;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $container-max-width;
+    margin: 0 auto;
+
+    @media screen and (max-width: $tablet-large) {
+      gap: 2rem;
+    }
+
+    @media screen and (max-width: $tablet) {
+      flex-direction: column-reverse;
+      gap: 2rem;
+    }
+  }
+
+  &__content,
+  img {
+    flex: 0 0 50%;
+  }
+
+  &__content {
+    max-width: 486px;
+
+    @media screen and (max-width: $tablet-large) {
+      max-width: 50%;
+    }
+
+    @media screen and (max-width: $tablet) {
+      max-width: unset;
+      width: 100%;
+    }
+
+    > p {
+      margin-bottom: 30px;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      &.icon {
+        .list__item {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 30px;
+
+          .item__icon {
+            display: flex;
+            width: 35px;
+            height: 35px;
+            min-width: 35px;
+            min-height: 35px;
+            background: url("/assets/images/tick.svg") no-repeat center $orange;
+            background-size: 16px 12px;
+            border-radius: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .list__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 532px;
+
+    img {
+      width: 100%;
+      height: auto;
+
+    //   @media screen and (max-width: $tablet) {
+    //     width: auto;
+    //     height: 50%;
+    //   }
+    }
+
+    @media screen and (max-width: $tablet-large) {
+      max-width: 50%;
+    }
+
+    @media screen and (max-width: $tablet) {
+      max-width: unset;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    .uptitle {
+      font-size: $font-size-base;
+      font-weight: $font-weight-normal;
+    }
+
+    h2 {
+      margin-bottom: 22px;
+    }
+  }
+}

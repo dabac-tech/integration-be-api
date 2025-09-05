@@ -1,0 +1,320 @@
+// ==========================================================================
+// COMPONENTS STYLES
+// ==========================================================================
+
+// Header
+.header {
+  background-color: $white;
+  position: sticky;
+  top: 0;
+  margin-top: 20px;
+  z-index: 100;
+
+  @media screen and (max-width: $tablet-large) {
+    margin-top: 0;
+  }
+}
+
+.nav {
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding-right: 1rem;
+    height: 78px;
+
+    @media screen and (max-width: $container-max-width) {
+      padding: 0 1rem;
+    }
+  }
+
+  &__logo {
+    img {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    @media screen and (max-width: $tablet-large) {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 2rem 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-100vh);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+
+      // Contenu du menu
+      .nav__menu,
+      .btn {
+        opacity: 0;
+        transition: opacity 0.1s ease; // Transition rapide par défaut (fermeture)
+      }
+
+      &.nav__wrapper--active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+
+        // Contenu visible avec délai à l'ouverture
+        .nav__menu,
+        .btn {
+          opacity: 1;
+          transition: opacity 0.3s ease 0.15s; // Délai seulement à l'ouverture
+        }
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+
+    @media screen and (max-width: $tablet-large) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1.5rem;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    gap: 1rem;
+
+    @media screen and (max-width: $tablet-large) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item {
+    a {
+        position: relative;
+        color: $brown;
+        font-size: $font-size-sm;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px; /* 200% */
+        text-decoration: none;
+        padding-bottom: 4px; // Un peu plus d'espace
+        transition: color 0.3s ease;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: $orange;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateX(-50%);
+            border-radius: 1px; // Coins légèrement arrondis
+        }
+
+        &:hover {
+            color: $orange;
+
+            &::after {
+                width: 100%;
+                left: 0;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 30px;
+    height: 30px;
+    justify-content: space-around;
+
+    @media screen and (max-width: $tablet-large) {
+      display: flex;
+    }
+
+    span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position: absolute;
+
+      &:nth-child(1) {
+        top: 50%;
+        transform: translateY(-8px);
+      }
+
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-1px);
+      }
+
+      &:nth-child(3) {
+        top: 50%;
+        transform: translateY(6px);
+      }
+    }
+
+    &.nav__toggle--active {
+      span {
+        &:nth-child(1) {
+          transform: translateY(-1px) rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          opacity: 0;
+          transform: translateY(-1px) scale(0);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-1px) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  max-width: $container-max-width;
+  margin: 0 auto 90px;
+  padding-top: 105px;
+  border-top: 1px solid rgba(188, 208, 229, 0.5);
+
+  @media screen and (max-width: $tablet-large) {
+    padding-top: 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    flex: 1;
+    gap: 140px;
+
+    @media screen and (max-width: $tablet-large) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .label {
+    color: $black;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    line-height: 30px; /* 150% */
+  }
+
+  &__content {
+    display: flex;
+    width: 100%;
+
+    @media screen and (max-width: $tablet) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    gap: 130px;
+
+    @media screen and (max-width: $tablet) {
+      justify-content: space-evenly;
+    }
+
+    @media screen and (max-width: $mobile) {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    @media screen and (max-width: $mobile) {
+      gap: 1rem;
+    }
+
+    a {
+      color: $brown;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 28px; /* 200% */
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  &__newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+
+    @media screen and (max-width: $tablet) {
+      gap: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+    }
+
+    input[type="email"] {
+      border-radius: 4px;
+      border: 1px solid $blue-border;
+      background: #fff;
+      padding: 10px 15px;
+      width: 100%;
+    }
+
+    .btn {
+      padding: 8px 15px;
+
+      @media screen and (max-width: $tablet) {
+        width: 100%;
+      }
+    }
+  }
+}
