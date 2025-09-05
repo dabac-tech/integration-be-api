@@ -17,3 +17,6 @@ Intégration d'une maquette HTML/CSS/JavaScript avec Swiper.js et animations.
 - ✅ Animations d'apparition au scroll
 - ✅ Effets hover sur la navigation
 - ✅ Optimisé pour les performances
+
+## 🚀 Démo en ligne
+**[Voir la démo](https://dabac-tech.github.io/integration-be-api/)**
