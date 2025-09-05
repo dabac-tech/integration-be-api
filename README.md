@@ -19,4 +19,4 @@ Intégration d'une maquette HTML/CSS/JavaScript avec Swiper.js et animations.
 - ✅ Optimisé pour les performances
 
 ## 🚀 Démo en ligne
-**[Voir la démo](https://dabac-tech.github.io/integration-be-api/){:target="_blank"}**
+**[Voir la démo](https://dabac-tech.github.io/integration-be-api/)**
